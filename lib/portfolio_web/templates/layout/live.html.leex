@@ -1,25 +1,23 @@
-<main role="main">
-    <div class="flex flex-col">
-      <div class="header">
-        <div class="hamburger-frame <%= if @menu_open, do: "ml-32 bg-pink-900" %>" phx-click="toggle_hamburger">
-          <div class="icon-frame test <%= if @menu_open, do: "rotate" %>">
-              <icon class="hamburger-open icon <%= if @menu_open, do: "ion-close", else: "ion-navicon-round" %>" />
-          </div>
-        </div>
-        <div class="project-title">
-          <h4>Portfolio</h4>
+<main role="main" style="height: 100vh;">
+  <div class="flex flex-col w-full h-full bg-pink-600">
+    <p class="alert alert-info" role="alert"
+      phx-click="lv:clear-flash"
+      phx-value-key="info"><%= live_flash(@flash, :info) %></p>
+    <p class="alert alert-danger" role="alert"
+      phx-click="lv:clear-flash"
+      phx-value-key="error"><%= live_flash(@flash, :error) %></p>
+    <div class="header">
+      <div class="hamburger-frame <%= if @menu_open, do: "ml-40 bg-pink-900" %>" phx-click="toggle_hamburger">
+        <div class="icon-frame test <%= if @menu_open, do: "rotate" %>">
+            <icon class="hamburger-open icon <%= if @menu_open, do: "ion-close", else: "ion-navicon-round" %>" />
         </div>
       </div>
-      <div style="background-color: green">
-        <button phx-click="toggle_hamburger">+</button>
-        <p class="alert alert-info" role="alert"
-          phx-click="lv:clear-flash"
-          phx-value-key="info"><%= live_flash(@flash, :info) %></p>
-
-        <p class="alert alert-danger" role="alert"
-          phx-click="lv:clear-flash"
-          phx-value-key="error"><%= live_flash(@flash, :error) %></p>
-        <%= @inner_content %>
+      <div class="project-title">
+        <h4>Portfolio</h4>
       </div>
     </div>
+    <div class="flex-1">
+      <%= @inner_content %>
+    </div>
+  </div>
 </main>

@@ -1,2 +1,7 @@
-<div>(Hi from page_live.html.leex)</div>
-<div><%= page_live_func %></div>
+<div class="flex flex-row mainframe h-full">
+  <div class="nav-menu">icons</div>
+  <div class="flex flex-row flex-auto">
+    <div class="<%= if @menu_open, do: "w-40", else: "w-0" %>">sub menu</div>
+    <div class="bg-yellow-400 flex-1">main page</div>
+  </div>
+</div>

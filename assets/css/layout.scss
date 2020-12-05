@@ -1,3 +1,5 @@
+[hidden] { display: none !important; }
+
 .header {
   @media (max-width: 768px) {
     display: none;
@@ -25,7 +27,31 @@
   color: orange;
 }
 
-.icon-frame {
+.mainframe {
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.relative-frame {
+  display: relative;
+}
+
+.nav-menu {
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 15px;
+    position: fixed;
+  }
+  flex-direction: column;
+  z-index: 100;
+  width: 60px;
+  background-color: #d1e8e3;
+  transition: all 0.2s ease-in-out;
+  padding-top: 15px;
 }
 
 .rotate {
