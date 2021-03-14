@@ -1,11 +1,5 @@
-<main role="main" style="height: 100vh;">
+<main role="main" class="h-full">
   <div class="flex flex-col w-full h-full bg-pink-600">
-    <p class="alert alert-info" role="alert"
-      phx-click="lv:clear-flash"
-      phx-value-key="info"><%= live_flash(@flash, :info) %></p>
-    <p class="alert alert-danger" role="alert"
-      phx-click="lv:clear-flash"
-      phx-value-key="error"><%= live_flash(@flash, :error) %></p>
     <div class="header">
       <div class="hamburger-frame <%= if @menu_open, do: "ml-40 bg-pink-900" %>" phx-click="toggle_hamburger">
         <div class="icon-frame test <%= if @menu_open, do: "rotate" %>">
@@ -13,11 +7,36 @@
         </div>
       </div>
       <div class="project-title">
-        <h4>Portfolio</h4>
+        <h4>d.r.d. web interface</h4>
       </div>
     </div>
-    <div class="flex-1">
-      <%= @inner_content %>
+    <div class="h-full">
+      <div class="flex flex-row mainframe h-full">
+        <div id="menu-icon-column" class="nav-menu">
+          <div class="nav-item">
+            <div class="nav-icon-frame">
+              <div class="nav-icon">
+                <icon class="icon ion-ios-list-outline"/>
+              </div>
+            </div>
+            <div class="sub-menu">Algorithm Viz</div>
+          </div>
+          <div class="nav-item">
+            <div class="nav-icon-frame">
+              <div class="nav-icon">
+                <icon class="icon ion-ios-book-outline"/>
+              </div>
+            </div>
+            <div class="sub-menu">About</div>
+          </div>
+        </div>
+        <div class="flex flex-row flex-auto">
+          <div id="sub-menu" class="transition-ease <%= if @menu_open, do: "w-40", else: "w-0" %>">
+            sub menu
+          </div>
+           <%= @inner_content %>
+        </div>
+      </div>
     </div>
   </div>
 </main>

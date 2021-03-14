@@ -1,12 +1,12 @@
-defmodule PortfolioWeb do
+defmodule TetrisWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use PortfolioWeb, :controller
-      use PortfolioWeb, :view
+      use TetrisWeb, :controller
+      use TetrisWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule PortfolioWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: PortfolioWeb
+      use Phoenix.Controller, namespace: TetrisWeb
 
       import Plug.Conn
-      import PortfolioWeb.Gettext
-      alias PortfolioWeb.Router.Helpers, as: Routes
+      import TetrisWeb.Gettext
+      alias TetrisWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/portfolio_web/templates",
-        namespace: PortfolioWeb
+        root: "lib/tetris_web/templates",
+        namespace: TetrisWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -45,8 +45,7 @@ defmodule PortfolioWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {PortfolioWeb.LayoutView, "live.html"},
-        container: {:div, class: "h-full"}
+        layout: {TetrisWeb.LayoutView, "live.html"}
 
       unquote(view_helpers())
     end
@@ -73,7 +72,7 @@ defmodule PortfolioWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import PortfolioWeb.Gettext
+      import TetrisWeb.Gettext
     end
   end
 
@@ -88,9 +87,9 @@ defmodule PortfolioWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import PortfolioWeb.ErrorHelpers
-      import PortfolioWeb.Gettext
-      alias PortfolioWeb.Router.Helpers, as: Routes
+      import TetrisWeb.ErrorHelpers
+      import TetrisWeb.Gettext
+      alias TetrisWeb.Router.Helpers, as: Routes
     end
   end
 
