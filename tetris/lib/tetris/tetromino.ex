@@ -1,5 +1,5 @@
 defmodule Tetris.Tetromino do
-  defstruct shape: :l, rotation: 0, location: {2, -1}
+  defstruct shape: :l, rotation: 0, location: {2, -3}
   alias Tetris.Point
   alias Tetris.Points
 
