@@ -1,9 +1,9 @@
-defmodule TetrisWeb.GameLive.GameOver do
+defmodule TetrisWeb.GameLive.Welcome do
   use TetrisWeb, :live_view
   alias Tetris.Game
 
-  def mount(params, _session, socket) do
-    {:ok, assign(socket, score: params["score"])}
+  def mount(_params, _session, socket) do
+    {:ok, assign(socket, game: Map.get(socket.assigns, :game) || Game.new())}
   end
 
   defp play(socket) do

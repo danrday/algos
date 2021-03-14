@@ -55,8 +55,30 @@ defmodule Tetris.Game do
       |> Tetromino.show()
       |> Enum.map(fn {x, y, shape} -> {{x, y}, shape} end)
       |> Enum.into(game.junkyard)
+      |> collapse_rows
 
     %{game | junkyard: new_junkyard}
+  end
+
+  def collapse_rows(game) do
+    rows = complete_rows(game)
+    game |> absorb(rows) |> score_rows(rows)
+  end
+
+  def absorb(game, rows) do
+    game
+  end
+
+  def score_rows(game, rows) do
+    game
+  end
+
+  defp complete_rows(game)
+    game.junkyard
+    |> Map.keys
+    |> Enum.group_by(&elem(%1, 1))
+    |> Enum.filter(fn {_y, list} -> length(list) == 10 end)
+    |> Enum.map(fn {y, _list} -> y end)
   end
 
   def junkyard_points(game) do
@@ -88,4 +110,5 @@ defmodule Tetris.Game do
 
     %{game | game_over: !continue_game}
   end
+
 end

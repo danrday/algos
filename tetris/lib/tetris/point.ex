@@ -68,7 +68,7 @@ defmodule Tetris.Point do
   def in_bounds?({x, y, _c}), do: in_bounds?({x, y})
   def in_bounds?({x, _y}) when x < 0, do: false
   def in_bounds?({x, _y}) when x > 9, do: false
-  def in_bounds?({_x, y}) when y > 20, do: false
+  def in_bounds?({_x, y}) when y >= 20, do: false
   def in_bounds?(_point), do: true
 
   def collide?({x, y, _c}, junkyard), do: collide?({x, y}, junkyard)
