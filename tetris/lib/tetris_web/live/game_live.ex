@@ -19,10 +19,11 @@ defmodule TetrisWeb.GameLive do
     <section class="phx-hero">
       <div phx-window-keydown="keystroke">
         <h1>Welcome to Tetris</h1>
+        <h2>Score: <%= @game.score %></h2>
         <%= render_board(assigns) %>
         <pre>
           {<%= x %> <%= y %>}
-          <h1><%= inspect @game.tetro.location %></h1>
+          <h1><%= inspect @game.junkyard %></h1>
         </pre>
       </div>
     </section>
@@ -40,7 +41,7 @@ defmodule TetrisWeb.GameLive do
 
   defp render_points(assigns) do
     ~L"""
-      <%= for {x, y, shape} <- @game.points do %>
+      <%= for {x, y, shape} <- @game.points ++ Game.junkyard_points(@game) do %>
         <rect width="20"
               height="20"
               x="<%= x * 20 %>"
