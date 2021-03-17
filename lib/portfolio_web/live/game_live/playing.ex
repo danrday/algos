@@ -96,4 +96,12 @@ defmodule PortfolioWeb.GameLive.Playing do
   def handle_event("keystroke", %{"key" => _}, socket) do
     {:noreply, socket}
   end
+
+  defp play(socket) do
+    push_redirect(socket, to: "/game/playing")
+  end
+
+  def handle_event("play", _, socket) do
+    {:noreply, play(socket)}
+  end
 end

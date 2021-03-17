@@ -19,4 +19,12 @@ defmodule PortfolioWeb.PageLive do
      |> put_flash(:error, "asdf")
      |> assign(menu_open: toggled)}
   end
+
+  defp play(socket) do
+    push_redirect(socket, to: "/game/playing")
+  end
+
+  def handle_event("play", _, socket) do
+    {:noreply, play(socket)}
+  end
 end

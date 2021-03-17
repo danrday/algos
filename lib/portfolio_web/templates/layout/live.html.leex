@@ -1,7 +1,7 @@
 <main role="main" class="h-full">
   <div class="flex flex-col w-full h-full bg-pink-600">
     <div class="header">
-      <div class="hamburger-frame <%= if @menu_open, do: "ml-40 bg-pink-900" %>" phx-click="toggle_hamburger">
+      <div class="hamburger-frame <%= if @menu_open, do: "open-menu-margin bg-pink-900" %>" phx-click="toggle_hamburger">
         <div class="icon-frame test <%= if @menu_open, do: "rotate" %>">
             <icon class="hamburger-open icon <%= if @menu_open, do: "ion-close", else: "ion-navicon-round" %>" />
         </div>
@@ -12,14 +12,14 @@
     </div>
     <div class="h-full">
       <div class="flex flex-row mainframe h-full">
-        <div id="menu-icon-column" class="nav-menu">
+        <div id="menu-icon-column" class="nav-menu transition-ease <%= if @menu_open, do: "w-48", else: "w-14" %>">
           <div class="nav-item">
             <div class="nav-icon-frame">
               <div class="nav-icon">
                 <icon class="icon ion-ios-list-outline"/>
               </div>
             </div>
-            <div class="sub-menu">Algorithm Viz</div>
+            <div class="sub-menu" phx-click="play">Tetris</div>
           </div>
           <div class="nav-item">
             <div class="nav-icon-frame">
@@ -27,14 +27,21 @@
                 <icon class="icon ion-ios-book-outline"/>
               </div>
             </div>
-            <div class="sub-menu">About</div>
+            <div class="sub-menu">Hangman</div>
+          </div>
+          <div class="nav-item">
+            <div class="nav-icon-frame">
+              <div class="nav-icon">
+                <icon class="icon ion-ios-book-outline"/>
+              </div>
+            </div>
+            <div class="sub-menu">About/Contact</div>
           </div>
         </div>
         <div class="flex flex-row flex-auto">
-          <div id="sub-menu" class="transition-ease <%= if @menu_open, do: "w-40", else: "w-0" %>">
-            sub menu
-          </div>
+          <div class="mt-3 ml-5">
            <%= @inner_content %>
+          </div>
         </div>
       </div>
     </div>

@@ -89,9 +89,9 @@
   }
   flex-direction: column;
   z-index: 100;
-  width: 60px;
+  width: 3.5rem;
   &:hover {
-    width: 200px;
+    width: 12rem;
   }
   background-color: #d1e8e3;
   transition: all 0.2s ease-in-out;
@@ -112,8 +112,8 @@
 
 .hamburger-frame {
   transition: all 0.2s ease-in-out;
-  width: 60px;
-  height: 60px;
+  width: 3.5rem;
+  height: 3.5rem;
   border-right: 1px solid rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
@@ -123,4 +123,8 @@
   &:hover {
     background-color: #e5fdff;
   }
+}
+
+.open-menu-margin {
+  margin-left: 8.5rem;
 }
