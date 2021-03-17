@@ -1,13 +1,28 @@
 
 
-    <div class="bg-yellow-400 flex-1">
+    <div class="flex-1">
       <p class="alert alert-info" role="alert"
         phx-click="lv:clear-flash"
         phx-value-key="info"><%= live_flash(@flash, :info) %></p>
       <p class="alert alert-danger" role="alert"
         phx-click="lv:clear-flash"
         phx-value-key="error"><%= live_flash(@flash, :error) %></p>
-      <div>
-        main page
+      <div class="space-y-1">
+        <p class="bg-yellow-400">Hi! I made this website with Phoenix Liveview, Elixir and Tailwind.</p>
+
+        <p class="bg-yellow-400">Here are some books and tutorials I've completed:</p>
+          <ul class="ml-10">
+            <li>Programming Phoenix - by McCord/Tate/Valim</li>
+            <li>Elixir for Developers - by Dave Thomas</li>
+            <li>Tetris Liveview - Groxio Learning T</li>
+            <li>Phoenix Liveview - Pragmatic Studio</li>
+            <li>Elixir & OTP - Pragmatic Studio</li>
+          </ul>
+        <p class="bg-yellow-400">
+          The code for this website and other projects can be viewed on<a href="http://github.com/danrday">GitHub</a>.
+        </p>
+        <p class="bg-yellow-400">
+          I can be reached at danday@gmail.com
+        </p>
       </div>
     </div>

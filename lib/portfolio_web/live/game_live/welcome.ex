@@ -13,4 +13,12 @@ defmodule PortfolioWeb.GameLive.Welcome do
   def handle_event("play", _, socket) do
     {:noreply, play(socket)}
   end
+
+  defp root(socket) do
+    push_redirect(socket, to: "/")
+  end
+
+  def handle_event("root", _, socket) do
+    {:noreply, root(socket)}
+  end
 end

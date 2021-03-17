@@ -24,7 +24,15 @@ defmodule PortfolioWeb.PageLive do
     push_redirect(socket, to: "/game/playing")
   end
 
+  defp root(socket) do
+    push_redirect(socket, to: "/")
+  end
+
   def handle_event("play", _, socket) do
     {:noreply, play(socket)}
+  end
+
+  def handle_event("root", _, socket) do
+    {:noreply, root(socket)}
   end
 end
