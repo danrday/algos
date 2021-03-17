@@ -11,12 +11,10 @@ defmodule PortfolioWeb.PageLive do
   end
 
   def handle_event("toggle_hamburger", _value, socket = %{assigns: %{menu_open: menu_open}}) do
-    IO.puts("HELLO")
     toggled = !menu_open
 
     {:noreply,
      socket
-     |> put_flash(:error, "asdf")
      |> assign(menu_open: toggled)}
   end
 
