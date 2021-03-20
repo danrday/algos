@@ -1,7 +1,7 @@
-<main role="main" class="h-full bg-blue-100">
+<main role="main" class="h-full" style="background-color: whitesmoke">
   <div class="flex flex-col w-full h-full">
     <div class="header">
-      <div class="hamburger-frame <%= if @menu_open, do: "open-menu-margin bg-pink-900" %>" phx-click="toggle_hamburger">
+      <div class="hamburger-frame <%= if @menu_open, do: "open-menu-margin bg-yellow-200" %>" phx-click="toggle_hamburger">
         <div class="icon-frame test <%= if @menu_open, do: "rotate" %>">
             <icon class="hamburger-open icon <%= if @menu_open, do: "ion-close", else: "ion-navicon-round" %>" />
         </div>

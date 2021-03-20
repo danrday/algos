@@ -7,22 +7,37 @@
     <p class="alert alert-danger" role="alert"
       phx-click="lv:clear-flash"
       phx-value-key="error"><%= live_flash(@flash, :error) %></p>
-    <div class="space-y-1 p-2.5">
-      <p class="bg-purple-200 p-2.5">Hi! I made this website with Phoenix Liveview, Elixir and Tailwind.</p>
+    <div class="space-y-1 p-1.5 text-xl">
+      
+      <p class="p-1.5">Hi! I made this website with <img style="width:60px; display: inline-block" src="/images/phoenix_crop.png" alt="Phoenix Framework Logo"/> Phoenix Liveview, <img style="width:30px; display: inline-block; margin-left: 5px; margin-right; 5px;" src="/images/Official_Elixir_logo.png" alt="Elixir Language Logo"/> Elixir, and Tailwind CSS.</p>
 
-      <p class="bg-purple-200 p-2.5" >Here are some books and tutorials I've completed:</p>
-        <ul class="ml-10 p-2.5">
-          <li class="bg-purple-200 p-1.5">Programming Phoenix - by McCord/Tate/Valim</li>
-          <li class="bg-purple-200 p-1.5">Elixir for Developers - by Dave Thomas</li>
-          <li class="bg-purple-200 p-1.5">Tetris in Elixir - Groxio Learning</li>
-          <li class="bg-purple-200 p-1.5">Phoenix Liveview - Pragmatic Studio</li>
-          <li class="bg-purple-200 p-1.5">Elixir & OTP - Pragmatic Studio</li>
+      <p class="p-1.5" >Here are some books and tutorials I've completed:</p>
+        <ul class="ml-10 p-1.5">
+          <li class="p-1.5">
+          <a class="text-gray-500 background-transparent font-bold uppercase px-3 py-1 text-base outline-none focus:outline-none mr-1 mb-1" href="https://codestool.coding-gnome.com/courses/elixir-for-programmers">Elixir for Programmers</a>
+           - by Dave Thomas
+          </li>
+          <li class="p-1.5">
+          <a class="text-gray-500 background-transparent font-bold uppercase px-3 py-1 text-base outline-none focus:outline-none mr-1 mb-1" href="https://pragmaticstudio.com/courses/elixir">Elixir & OTP</a>- by The Pragmatic Studio
+          </li>
+          <li class="p-1.5">
+          <a class="text-gray-500 background-transparent font-bold uppercase px-3 py-1 text-base outline-none focus:outline-none mr-1 mb-1" href="https://pragprog.com/titles/phoenix14/programming-phoenix-1-4/">Programming Phoenix</a>
+           - by McCord/Tate/Valim
+          </li>
+          <li class="p-1.5">
+          <a class="text-gray-500 background-transparent font-bold uppercase px-3 py-1 text-base outline-none focus:outline-none mr-1 mb-1" href="https://www.youtube.com/watch?v=8h8tWcz115M&list=PLKBMoE8mCkXi-sAkesjaUnDQqyrkAK8R5">Tetris in Elixir</a>
+           - by Groxio Learning
+          </li>
+          <li class="p-1.5">
+          <a class="text-gray-500 background-transparent font-bold uppercase px-3 py-1 text-base outline-none focus:outline-none mr-1 mb-1" href="https://pragmaticstudio.com/phoenix-liveview">Phoenix Liveview</a>
+           - by The Pragmatic Studio
+          </li>
         </ul>
-      <p class="bg-purple-200 p-2.5">
-        The code for this website and other projects can be viewed on <a href="http://github.com/danrday">GitHub</a>.
+      <p class="p-1.5">
+        The code for this website and other projects can be viewed on<a class="text-gray-500 background-transparent font-bold uppercase px-3 py-1 text-base outline-none focus:outline-none mr-1 mb-1" href="http://github.com/danrday">GitHub</a>.
       </p>
-      <p class="bg-purple-200 p-2.5">
-        I can be reached at danday@gmail.com
+      <p class="p-1.5">
+        I can be reached at danday@gmail.com or through<a class="text-gray-500 background-transparent font-bold uppercase px-3 py-1 text-base outline-none focus:outline-none mr-1 mb-1" href="https://www.linkedin.com/in/dan-r-day/">LinkedIn</a>.
       </p>
     </div>
   </div>

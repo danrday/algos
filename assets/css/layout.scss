@@ -10,7 +10,7 @@
   right: 0;
   left: 0;
   z-index: 1030;
-  background-color: #312a48;
+  background-color: white;
   box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.16);
   display: flex;
   align-items: center;
@@ -24,7 +24,7 @@
   margin-right: 20px;
   margin-bottom: 0px;
   letter-spacing: -1px;
-  color: orange;
+  color: slategrey;
 }
 
 .mainframe {
@@ -41,7 +41,7 @@
   height: 30px;
   transition: all 0.2s ease-in-out;
   &:hover {
-    background-color: mintcream;
+    background-color: NavajoWhite;
     cursor: pointer;
   }
 }
@@ -95,7 +95,7 @@
   flex-direction: column;
   z-index: 100;
   width: 3.5rem;
-  background-color: #d1e8e3;
+  background-color: honeydew;
   transition: all 0.2s ease-in-out;
   padding-top: 15px;
 }
