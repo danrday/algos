@@ -87,12 +87,14 @@
     padding-bottom: 15px;
     position: fixed;
   }
+  @media (min-width: 769px) {
+    &:hover {
+      width: 12rem;
+    }
+  }
   flex-direction: column;
   z-index: 100;
   width: 3.5rem;
-  &:hover {
-    width: 12rem;
-  }
   background-color: #d1e8e3;
   transition: all 0.2s ease-in-out;
   padding-top: 15px;
@@ -127,4 +129,24 @@
 
 .open-menu-margin {
   margin-left: 8.5rem;
+}
+
+.menu-open {
+  width: 12rem;
+  @media (max-width: 768px) {
+    width: 100%
+  }
+}
+
+.menu-closed {
+  width: 3.5rem;
+  @media (max-width: 768px) {
+    width: 100%
+  }
+}
+
+.clear-menu {
+  @media (max-width: 768px) {
+    padding-top: 65px;
+  }
 }
