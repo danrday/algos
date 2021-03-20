@@ -63,8 +63,8 @@ defmodule Portfolio.Tetris.Game do
     rows = complete_rows(game)
 
     game
-    |> absorb(rows)
     |> score_rows(rows)
+    |> absorb(rows)
   end
 
   def absorb(game, []), do: game
@@ -86,13 +86,15 @@ defmodule Portfolio.Tetris.Game do
   def maybe_move_y(y, row) when y < row, do: y + 1
   def maybe_move_y(y, _row), do: y
 
+  def score_rows(game, []), do: game
+
   def score_rows(game, rows) do
     new_score =
       :math.pow(2, length(rows))
       |> round
       |> Kernel.*(100)
 
-    %{game | score: new_score}
+    %{game | score: new_score + game.score}
   end
 
   defp complete_rows(game) do
