@@ -1,7 +1,9 @@
-<section class="phx-hero">
-  <div phx-window-keydown="keystroke">
-    <h1>Welcome to Tetris</h1>
-    <h2>Score: <%= @game.score %></h2>
-    <%= render_board(assigns) %>
+<div class="mt-3 ml-5 w-full">
+  <div class="flex flex-col items-center">
+    <div phx-window-keydown="keystroke">
+      <h1>Welcome to Tetris</h1>
+      <h2>Score: <%= @game.score %></h2>
+      <%= render_board(assigns) %>
+    </div>
   </div>
-</section>
+</div>

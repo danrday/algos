@@ -1,28 +1,29 @@
 
+<div class="mt-3 ml-5">
+  <div class="flex-1">
+    <p class="alert alert-info" role="alert"
+      phx-click="lv:clear-flash"
+      phx-value-key="info"><%= live_flash(@flash, :info) %></p>
+    <p class="alert alert-danger" role="alert"
+      phx-click="lv:clear-flash"
+      phx-value-key="error"><%= live_flash(@flash, :error) %></p>
+    <div class="space-y-1 p-2.5">
+      <p class="bg-purple-200 p-2.5">Hi! I made this website with Phoenix Liveview, Elixir and Tailwind.</p>
 
-    <div class="flex-1">
-      <p class="alert alert-info" role="alert"
-        phx-click="lv:clear-flash"
-        phx-value-key="info"><%= live_flash(@flash, :info) %></p>
-      <p class="alert alert-danger" role="alert"
-        phx-click="lv:clear-flash"
-        phx-value-key="error"><%= live_flash(@flash, :error) %></p>
-      <div class="space-y-1 p-2.5">
-        <p class="bg-purple-200 p-2.5">Hi! I made this website with Phoenix Liveview, Elixir and Tailwind.</p>
-
-        <p class="bg-purple-200 p-2.5" >Here are some books and tutorials I've completed:</p>
-          <ul class="ml-10 p-2.5">
-            <li class="bg-purple-200 p-1.5">Programming Phoenix - by McCord/Tate/Valim</li>
-            <li class="bg-purple-200 p-1.5">Elixir for Developers - by Dave Thomas</li>
-            <li class="bg-purple-200 p-1.5">Tetris in Elixir - Groxio Learning</li>
-            <li class="bg-purple-200 p-1.5">Phoenix Liveview - Pragmatic Studio</li>
-            <li class="bg-purple-200 p-1.5">Elixir & OTP - Pragmatic Studio</li>
-          </ul>
-        <p class="bg-purple-200 p-2.5">
-          The code for this website and other projects can be viewed on <a href="http://github.com/danrday">GitHub</a>.
-        </p>
-        <p class="bg-purple-200 p-2.5">
-          I can be reached at danday@gmail.com
-        </p>
-      </div>
+      <p class="bg-purple-200 p-2.5" >Here are some books and tutorials I've completed:</p>
+        <ul class="ml-10 p-2.5">
+          <li class="bg-purple-200 p-1.5">Programming Phoenix - by McCord/Tate/Valim</li>
+          <li class="bg-purple-200 p-1.5">Elixir for Developers - by Dave Thomas</li>
+          <li class="bg-purple-200 p-1.5">Tetris in Elixir - Groxio Learning</li>
+          <li class="bg-purple-200 p-1.5">Phoenix Liveview - Pragmatic Studio</li>
+          <li class="bg-purple-200 p-1.5">Elixir & OTP - Pragmatic Studio</li>
+        </ul>
+      <p class="bg-purple-200 p-2.5">
+        The code for this website and other projects can be viewed on <a href="http://github.com/danrday">GitHub</a>.
+      </p>
+      <p class="bg-purple-200 p-2.5">
+        I can be reached at danday@gmail.com
+      </p>
     </div>
+  </div>
+</div>
