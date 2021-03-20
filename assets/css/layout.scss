@@ -150,3 +150,18 @@
     padding-top: 65px;
   }
 }
+
+.nav-item {
+  @media (max-width: 768px) {
+    width: 50px;
+    .sub-menu {
+      display:none;
+    }
+    &:hover {
+       width: 100%;
+      .sub-menu {
+        display: inline-block;
+      }
+    }
+  }
+}
