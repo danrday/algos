@@ -15,6 +15,7 @@ defmodule PortfolioWeb.PageLive do
 
     {:noreply,
      socket
+     |> put_flash(:error, "asdf")
      |> assign(menu_open: toggled)}
   end
 
