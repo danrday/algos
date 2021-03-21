@@ -1,0 +1,18 @@
+
+<div class="flex flex-col">
+  <div>
+    Turns left: <%= @tally.turns_left %>
+  </div>
+
+  <div>
+    Word so far: <%= @tally.letters |> Enum.join(" ") %>
+  </div>
+
+  <div class="flex flex-row flex-wrap w-6/12">
+    <%= for x <- "abcdefghijklmnopqrstuvwxyz" |> String.graphemes do %>
+      <div phx-click="play" phx-value-letter="<%= x %>" class="m-0.5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <%= x %>
+      </div>
+    <% end %>
+  </div>
+</div>
