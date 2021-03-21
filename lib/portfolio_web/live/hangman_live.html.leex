@@ -6,14 +6,18 @@
     <p class="alert alert-danger" role="alert"
       phx-click="lv:clear-flash"
       phx-value-key="error"><%= live_flash(@flash, :error) %></p>
-    <div>
+
+    <div class="w-2/12">
+      <%= live_component @socket, GallowsComponent, left: @tally.turns_left %>
+    </div>
+
+    <div class="text-xl">
       Turns left: <%= @tally.turns_left %>
     </div>
 
-    <div>
+    <div class="text-xl">
       Word so far: <%= @tally.letters |> Enum.join(" ") %>
     </div>
-
 
     <%= if @tally.game_state == :lost do %>
       <div phx-click="new_game" class="m-0.5 bg-green-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Play Again?</div>
