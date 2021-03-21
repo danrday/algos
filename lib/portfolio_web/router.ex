@@ -17,6 +17,12 @@ defmodule PortfolioWeb.Router do
   scope "/", PortfolioWeb do
     pipe_through :browser
 
+    live "/mindmap", MindmapLive, :index
+    live "/hangman", HangmanLive, :game
+
+    live "/game", GameLive.Welcome, :welcome
+    live "/game/playing", GameLive.Playing, :playing
+    live "/game/over", GameLive.GameOver, :game_over
     live "/", PageLive, :index
   end
 

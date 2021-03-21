@@ -1,9 +1,9 @@
-defmodule PortfolioWeb.PageLive do
+defmodule PortfolioWeb.MindmapLive do
   use PortfolioWeb, :live_view
 
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, menu_open: true)}
+    {:ok, assign(socket, menu_open: false)}
   end
 
   def handle_event("toggle_hamburger", _value, socket = %{assigns: %{menu_open: menu_open}}) do

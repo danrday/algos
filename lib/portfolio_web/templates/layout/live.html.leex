@@ -1,39 +1,52 @@
-<main role="main" class="h-full">
-  <div class="flex flex-col w-full h-full bg-pink-600">
+<main role="main" class="h-full" style="background-color: whitesmoke">
+  <div class="flex flex-col w-full h-full">
     <div class="header">
-      <div class="hamburger-frame <%= if @menu_open, do: "ml-40 bg-pink-900" %>" phx-click="toggle_hamburger">
+      <div class="hamburger-frame <%= if @menu_open, do: "open-menu-margin bg-yellow-200" %>" phx-click="toggle_hamburger">
         <div class="icon-frame test <%= if @menu_open, do: "rotate" %>">
             <icon class="hamburger-open icon <%= if @menu_open, do: "ion-close", else: "ion-navicon-round" %>" />
         </div>
       </div>
       <div class="project-title">
-        <h4>d.r.d. web interface</h4>
+        Dan Day - Software Engineer
       </div>
     </div>
     <div class="h-full">
       <div class="flex flex-row mainframe h-full">
-        <div id="menu-icon-column" class="nav-menu">
-          <div class="nav-item">
+        <div id="menu-icon-column" class="nav-menu transition-ease <%= if @menu_open, do: "menu-open", else: "menu-closed" %>">
+          <div class="nav-item" phx-click="play">
             <div class="nav-icon-frame">
               <div class="nav-icon">
-                <icon class="icon ion-ios-list-outline"/>
+                <icon class="icon ion-cube"/>
               </div>
             </div>
-            <div class="sub-menu">Algorithm Viz</div>
+            <div class="sub-menu">Tetris</div>
           </div>
-          <div class="nav-item">
+          <div class="nav-item" phx-click="hangman">
             <div class="nav-icon-frame">
               <div class="nav-icon">
-                <icon class="icon ion-ios-book-outline"/>
+                <icon class="icon ion-man"/>
               </div>
             </div>
-            <div class="sub-menu">About</div>
+            <div class="sub-menu">Hangman</div>
+          </div>
+          <div class="nav-item" phx-click="mindmap">
+            <div class="nav-icon-frame">
+              <div class="nav-icon">
+                <icon class="icon ion-map"/>
+              </div>
+            </div>
+            <div class="sub-menu" >MindMap</div>
+          </div>
+          <div class="nav-item" phx-click="root">
+            <div class="nav-icon-frame">
+              <div class="nav-icon">
+                <icon class="icon ion-android-happy"/>
+              </div>
+            </div>
+            <div class="sub-menu">About/Contact</div>
           </div>
         </div>
-        <div class="flex flex-row flex-auto">
-          <div id="sub-menu" class="transition-ease <%= if @menu_open, do: "w-40", else: "w-0" %>">
-            sub menu
-          </div>
+        <div class="flex flex-row flex-auto clear-menu">
            <%= @inner_content %>
         </div>
       </div>

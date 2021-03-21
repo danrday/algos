@@ -1,9 +1,21 @@
-defmodule PortfolioWeb.PageLive do
+defmodule PortfolioWeb.GameLive.GameOver do
   use PortfolioWeb, :live_view
+  alias Portfolio.Tetris.Game
 
-  @impl true
-  def mount(_params, _session, socket) do
-    {:ok, assign(socket, menu_open: true)}
+  def mount(params, _session, socket) do
+    {:ok, assign(socket, menu_open: false, score: params["score"])}
+  end
+
+  defp play(socket) do
+    push_redirect(socket, to: "/game/playing")
+  end
+
+  def handle_event("play", _, socket) do
+    {:noreply, play(socket)}
+  end
+
+  defp root(socket) do
+    push_redirect(socket, to: "/")
   end
 
   def handle_event("toggle_hamburger", _value, socket = %{assigns: %{menu_open: menu_open}}) do

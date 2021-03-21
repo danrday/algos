@@ -1,0 +1,18 @@
+<div class="mt-3 ml-5 w-full">
+  <div class="flex flex-col items-center">
+    <div phx-window-keydown="keystroke">
+      <h1>Welcome to Tetris!</h1>
+      <h1>Use the arrow keys to play.</h1>
+      <h2>Score: <%= @game.score %></h2>
+      <%= render_board(assigns) %>
+    </div>
+    <div class="mt-20">
+      Completed with the course
+      <a class="text-gray-500 background-transparent font-bold uppercase px-3 py-1 text-base outline-none focus:outline-none mr-1 mb-1" href="https://www.youtube.com/watch?v=8h8tWcz115M&list=PLKBMoE8mCkXi-sAkesjaUnDQqyrkAK8R5">Tetris in Elixir</a>
+             - by Groxio Learning
+            </li>
+    </div>
+  </div>
+
+
+</div>
