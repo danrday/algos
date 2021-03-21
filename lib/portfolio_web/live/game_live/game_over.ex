@@ -18,7 +18,27 @@ defmodule PortfolioWeb.GameLive.GameOver do
     push_redirect(socket, to: "/")
   end
 
+  def handle_event("toggle_hamburger", _value, socket = %{assigns: %{menu_open: menu_open}}) do
+    toggled = !menu_open
+
+    {:noreply,
+     socket
+     |> assign(menu_open: toggled)}
+  end
+
+  def handle_event("play", _, socket) do
+    {:noreply, push_redirect(socket, to: "/game/playing")}
+  end
+
+  def handle_event("hangman", _, socket) do
+    {:noreply, push_redirect(socket, to: "/hangman")}
+  end
+
+  def handle_event("mindmap", _, socket) do
+    {:noreply, push_redirect(socket, to: "/mindmap")}
+  end
+
   def handle_event("root", _, socket) do
-    {:noreply, root(socket)}
+    {:noreply, push_redirect(socket, to: "/")}
   end
 end
